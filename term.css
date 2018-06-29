@@ -1,0 +1,68 @@
+/*
+// Term.js
+// Lucas Klassmann, <lucasklassmann@gmail.com>
+*/
+
+.terminal {
+    font-family: monospace;
+    font-weight: 100;
+    font-size: 1.2em;
+    overflow: auto;
+    color: #333;
+}
+
+.shell {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.lineinput {
+    float: left;
+    display: block;
+    width: 100%;
+    color: #333;
+}
+
+.prompt {
+    float: left;
+    display: inline-block;
+    margin-right: 3px;
+    font-weight: normal;
+    color: #333;
+}
+
+.current {
+    float: left;
+    display: inline-block; 
+}
+
+.current span:empty {
+    display: inline-block;
+    width: 4px;
+}
+
+@keyframes cursor-blink {
+    0% {background-color: white;}
+    50% {background-color: #333;}
+    100% {background-color: white;}
+}
+
+.cursor {
+    width: 8px;
+    height: 18px;
+    margin-left: 3px;
+    background-color: #333;
+    display: inline-block;
+    animation: cursor-blink .7s infinite;
+}
+
+.keyword {
+    font-weight: normal;  
+    color: cyan;
+}
+
+.option {
+    font-weight: lighter;
+    color: lightgreen;
+}
