@@ -3,7 +3,7 @@
 <head>
 	<title>Term.js Component</title>
     <link rel="stylesheet" href="../term.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <style>
 
         * {
@@ -11,25 +11,27 @@
         }
 
         body {
-            background-color: #333;
+            background-color: rgb(11, 19, 11);
             margin: 0;
         }
 
         .terminal {
-            font-family: 'Source Code Pro', monospace;
-            font-size: 1.2em;
+            font-family: 'VT323', monospace;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+            font-weight: lighter;
             padding: 10px;
             width: 100vw;
             height: 100vh;
-            color: white;
         }
 
-        .lineinput {
-            color: white;
-        }
-
-        .prompt {
-            color: white;
+        .terminal,
+        .lineinput,
+        .prompt,
+        .command,
+        .command-wrong,
+        .option {
+            color: limegreen;
         }
     </style>
 </head>

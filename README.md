@@ -1,6 +1,9 @@
 # Term.js
 A basic Terminal idea in Javascript (Vanilla). This is just an idea I wrote from scratch, I tried to make a simple terminal in Javascript for an application that I made.
 
+![Basic](examples/basic.png)
+![Customized](examples/customized.png)
+![Old School](examples/oldschool.png)
 
 ## Features
 - [X] Basic shell

@@ -118,7 +118,7 @@
             } else if (idx > 0) {
                 return '<span class="option">_c_</span>'.replace(/_c_/, command);
             }
-            
+
             return '<span>_c_</span>'.replace(/_c_/, command);
         }
 
@@ -204,6 +204,7 @@
         registerCommand(command) {
             this.commands.push(command);
         }
+    
     }
 
     window.Terminal = Terminal;
