@@ -12,7 +12,7 @@ A basic Terminal idea in Javascript (Vanilla). This is just an idea I wrote from
 - [ ] Tab keys and arrow keys movement
 - [ ] Output coloring (VT100 emulation or something like that)
 
-![Basic](examples/basic.png)
+![Customized](examples/customized.png)
 
 ## Usage
 ```html
@@ -44,7 +44,7 @@ Term.js has only one option, that is the class for read and run the commands:
 I am adding more examples in [termjs/examples](examples) folder.
 
 # Screenshots
-![Customized](examples/customized.png)
+![Basic](examples/basic.png)
 ![Old School](examples/oldschool.png)
 
 ## License
