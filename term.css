@@ -57,9 +57,13 @@
     animation: cursor-blink .7s infinite;
 }
 
-.keyword {
+.command {
     font-weight: normal;  
-    color: cyan;
+    color: rgb(160, 72, 243);
+}
+
+.command-wrong {
+    color: red;
 }
 
 .option {

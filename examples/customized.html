@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Term.js Component</title>
+    <link rel="stylesheet" href="../term.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400" rel="stylesheet">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #333;
+            margin: 0;
+        }
+
+        .terminal {
+            font-family: 'Source Code Pro', monospace;
+            padding: 10px;
+            width: 100vw;
+            height: 100vh;
+            color: white;
+        }
+
+        .lineinput {
+            color: white;
+        }
+
+        .prompt {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+	<div class="terminal"><div class="shell"></div></div>
+    <script src="../term.js" type="text/javascript"></script>
+    <script>
+        window.addEventListener('load', () => {
+
+            // Example of a custom interpreter class for Terminal
+            class CustomInterpreter {
+                // Required
+                constructor(buffer) {
+                    this.buffer = buffer;
+                    this.buffer.registerCommand("ls");
+                    this.buffer.registerCommand("help");
+                    this.buffer.registerCommand("whoami");
+                }
+
+                // Required
+                run(command) {
+                    var args = command.split(" ");
+                    if (args[0] == "ls") {
+                        this.buffer.writeLine("-rw-r--r--  1 user  user  1072 29 Jun 12:14 LICENSE");
+                        this.buffer.writeLine("-rw-r--r--  1 user  user  1035 30 Jun 11:40 README.md");
+                        this.buffer.writeLine("drwxr-xr-x  4 user  user   128 30 Jun 11:32 examples");
+                        this.buffer.writeLine("-rw-r--r--  1 user  user  1059 30 Jun 11:36 term.css");
+                        this.buffer.writeLine("-rw-r--r--  1 user  user  5394 30 Jun 11:37 term.js");
+                    } else if (args[0] == "help") {
+                        this.buffer.writeLine("Help of term.js:");
+                        this.buffer.writeLine("ls - Lists files in the current directory.");
+                        this.buffer.writeLine("whoami - Says who are you.");
+                        this.buffer.writeLine("help - Shows this help.");
+                    } else if (args[0] == "whoami") {
+                        this.buffer.writeLine("Sorry, I don't know.");
+                    } else {
+                        this.buffer.writeLine("Command not found.");
+                    }
+                }
+            }
+            
+            var terminal = new Terminal(document.querySelector(".terminal"), {
+                interpreterClass: CustomInterpreter
+            });
+            terminal.writeLine("***************************************");
+            terminal.writeLine("* Welcome to Term.js                 *");
+            terminal.writeLine("***************************************");
+            terminal.start();
+        });
+    </script>
+</body>
+</html>

@@ -53,12 +53,15 @@
         SHIFT: 16
     };
 
+
+
     class Terminal {
 
         constructor(el, options) {
             var defaults = {
                 interpreterClass: DummyInterpreter
             };
+            this.commands = [];
             this.buffer = [];
             this.history = [];
             this.el = el;
@@ -105,7 +108,17 @@
             return this.getBufferRaw().split(' ');
         }
 
-        hightlightCommand(command) {
+        hightlightCommand(command, idx) {
+
+            // Commands
+            if (idx == 0 && this.commands.includes(command)) {
+                return '<span class="command">_c_</span>'.replace(/_c_/, command);
+            } else if (idx == 0 && !this.commands.includes(command)) {
+                return '<span class="command-wrong">_c_</span>'.replace(/_c_/, command);
+            } else if (idx > 0) {
+                return '<span class="option">_c_</span>'.replace(/_c_/, command);
+            }
+            
             return '<span>_c_</span>'.replace(/_c_/, command);
         }
 
@@ -116,7 +129,7 @@
             
             for(var idx in commands) {
                 var cmd = commands[idx];
-                hightlightedBuffer.push(self.hightlightCommand(cmd));
+                hightlightedBuffer.push(self.hightlightCommand(cmd, idx));
             }
             return hightlightedBuffer;
         }
@@ -186,6 +199,10 @@
 
         start() {
             this.newLineTerminal();
+        }
+
+        registerCommand(command) {
+            this.commands.push(command);
         }
     }
 

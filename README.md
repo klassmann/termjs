@@ -6,8 +6,9 @@ A basic Terminal idea in Javascript (Vanilla). This is just an idea I wrote from
 - [X] Basic shell
 - [X] Custom command interpreter
 - [X] Pure javascript and withour dependencies 
-- [ ] Command highlighting
+- [X] Command highlighting
 - [ ] Command history
+- [ ] Quoted arguments support (strings)
 - [ ] Suggestion and autocompletion
 - [ ] Tab keys and arrow keys movement
 - [ ] Output coloring (VT100 emulation or something like that)
@@ -19,6 +20,14 @@ A basic Terminal idea in Javascript (Vanilla). This is just an idea I wrote from
     <script src="term.js"></script>
 ```
 
+## Options
+Term.js has only one option, that is the class for read and run the commands:
+
+```javascript
+    var term = new Terminal(document.querySelector(".terminal"), {
+        interpreterClass: MyCustomClass // The default is the DummyInterpreter
+    });
+```
 
 ## Example
 
@@ -31,6 +40,8 @@ A basic Terminal idea in Javascript (Vanilla). This is just an idea I wrote from
         terminal.start();
     });
 ```
+
+I am adding more examples in [termjs/examples](examples) folder.
 
 ## License
 MIT
