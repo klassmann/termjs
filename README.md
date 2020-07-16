@@ -1,5 +1,7 @@
 # Term.js
-A basic Terminal idea in Javascript (Vanilla). This is just an idea I wrote from scratch, I tried to make a simple terminal in Javascript for an application that I made.
+
+It's a basic terminal implemented in pure Javascript, it provides a basic REPL and you can customize how the commands are interpreted.
+
 
 ## Features
 - [X] Basic shell
