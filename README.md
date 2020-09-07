@@ -50,4 +50,4 @@ I am adding more examples in [termjs/examples](examples) folder.
 ![Old School](examples/oldschool.png)
 
 ## License
-MIT
+[Apache 2.0](LICENSE)
